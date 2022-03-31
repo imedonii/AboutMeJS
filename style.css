@@ -37,9 +37,7 @@ button:hover {
   margin-top: 50px;
 }
 
-.aboutme,
-.job,
-.hobby {
+.box {
   padding-left: 70px;
   border: 1px solid rgb(226, 150, 7);
   width: 500px;

@@ -5,11 +5,13 @@ const job = document.querySelector('.job');
 const hobby = document.querySelector('.hobby');
 const overlay = document.querySelector('.overlay');
 const closed = document.querySelector('.close');
+const socialmedia = document.querySelector('.socialmedia');
 
 // buttons
 const b1 = document.querySelector('.btn1');
 const b2 = document.querySelector('.btn2');
 const b3 = document.querySelector('.btn3');
+const b4 = document.querySelector('.btn4');
 
 // ---- closed function ( adding 'hidden' class)
 const jobClose = () => {
@@ -20,6 +22,9 @@ const hobbyClose = () => {
 }
 const aboutmeClose = () => {
     aboutme.classList.add('hidden');
+}
+const socialClose = () => {
+    socialmedia.classList.add('hidden');
 }
 // --------------------------------------
 
@@ -42,12 +47,16 @@ const hobbyRemove = () => {
 const overlayRemove = () => {
     overlay.classList.remove('hidden');
 }
+const socialRemove = () => {
+    socialmedia.classList.remove('hidden');
+}
 //-------------------
 
 const verifyAboutme = () => {
     if (!job.classList.contains('hidden') ||
         !hobby.classList.contains('hidden') ||
-        !aboutme.classList.contains('hidden')
+        !aboutme.classList.contains('hidden') ||
+        !socialmedia.classList.contains('hidden')
     ) {
         return true;
     } else
@@ -59,9 +68,12 @@ const but1 = () => {
     overlayRemove();
     exit();
     if (!job.classList.contains('hidden') ||
-        !hobby.classList.contains('hidden')) {
+        !hobby.classList.contains('hidden') ||
+        !socialmedia.classList.contains('hidden')
+    ) {
         jobClose();
         hobbyClose();
+        socialClose();
     }
 
 }
@@ -71,9 +83,12 @@ const but2 = () => {
     overlayRemove();
     exit();
     if (!hobby.classList.contains('hidden') ||
-        !aboutme.classList.contains('hidden')) {
+        !aboutme.classList.contains('hidden') ||
+        !socialmedia.classList.contains('hidden')
+    ) {
         aboutmeClose();
         hobbyClose();
+        socialClose();
     }
 }
 const but3 = () => {
@@ -81,20 +96,39 @@ const but3 = () => {
     overlayRemove();
     exit();
     if (!job.classList.contains('hidden') ||
-        !aboutme.classList.contains('hidden')) {
+        !aboutme.classList.contains('hidden') ||
+        !socialmedia.classList.contains('hidden')
+    ) {
         jobClose();
         aboutmeClose();
+        socialClose();
+    }
+}
+
+const but4 = () => {
+    socialRemove();
+    overlayRemove();
+    exit();
+    if (!job.classList.contains('hidden') ||
+        !aboutme.classList.contains('hidden') ||
+        !hobby.classList.contains('hidden')
+    ) {
+        jobClose();
+        aboutmeClose();
+        hobbyClose();
     }
 }
 
 b1.addEventListener('click', but1);
 b2.addEventListener('click', but2);
 b3.addEventListener('click', but3);
+b4.addEventListener('click', but4);
 
 const close = () => {
     aboutme.classList.add('hidden');
     hobby.classList.add('hidden');
     job.classList.add('hidden');
+    socialmedia.classList.add('hidden');
     overlay.classList.add('hidden');
     closed.classList.add('hidden');
 }
